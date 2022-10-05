@@ -1,0 +1,25 @@
+.container {
+  height: 300px;
+  width: 400px;
+  background-color: blue;
+  border-radius: 35px;
+  margin-inline: auto;
+
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  overflow: hidden;
+}
+
+.elemento {
+  width: 100px;
+  height: 50px;
+  background-color: red;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
