@@ -1,4 +1,4 @@
-# Atos Java - Integration of Frontend Projects
+# Atos Front - Integration of Frontend Projects
 
 Navigation between lessons is done using the repository branches.
 
