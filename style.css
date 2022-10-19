@@ -1,3 +1,56 @@
-body {
-  background-color: purple;
+/* reset CSS proprities */
+
+body,
+table {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #3f3f3f;
+  font-family: "Roboto", sans-serif;
+}
+
+p,
+h3,
+small {
+  margin: 0;
+  padding: 0;
+}
+
+/* styling table */
+
+body,
+table,
+tbody {
+  margin: auto;
+}
+
+td {
+  padding: 2px;
+  border: 2px solid #3f3f3f;
+  width: 85px;
+  height: 25px;
+  text-align: center;
+}
+
+td:hover:not(.blank) {
+  scale: 1.05;
+  box-shadow: 0px 0px 5px #bababa;
+  cursor: pointer;
+}
+
+/* styling components */
+p {
+  font-size: 12px;
+}
+
+p:first-child {
+  text-align: left;
+}
+
+small {
+  font-size: 11px;
+}
+
+.blank {
+  border: none;
 }
