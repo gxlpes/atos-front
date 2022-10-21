@@ -25,7 +25,6 @@ tbody {
 }
 
 td {
-  padding: 2px;
   border: 2px solid #3f3f3f;
   width: 85px;
   height: 25px;
@@ -53,4 +52,32 @@ small {
 
 .blank {
   border: none;
+}
+
+/* modal setup */
+
+.bg-modal {
+  width: 100vw;
+  height: 100vh;
+  background-color: #00000091;
+  backdrop-filter: blur(2px);
+  position: absolute;
+  display: none;
+}
+
+.modal {
+  background-color: #bababa;
+  max-width: 55%;
+  max-height: 10%;
+  padding: 25px;
+  border-radius: 7px;
+  box-shadow: 0px 0px 5px #3f3f3f;
+  z-index: 999;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
 }
