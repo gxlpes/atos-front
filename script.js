@@ -1,8 +1,6 @@
 // select all cells
-const td = document.querySelectorAll("td");
+const td = document.querySelectorAll("td:not(.blank)");
 const backBg = document.querySelector(".bg-modal");
-
-console.log(backBg);
 
 // modal setup
 const modal = document.querySelector(".modal");
@@ -14,7 +12,7 @@ const elementDescM = document.querySelector(".element-desc");
 // function for each cell
 td.forEach((td) => {
   td.addEventListener("click", function () {
-    modal.style.display = "block";
+    modal.style.display = "flex";
     backBg.style.display = "block";
 
     let elementNumberT = td.querySelectorAll("p")[0].textContent;
@@ -38,7 +36,9 @@ buttonDismiss.addEventListener("click", function () {
 
 // click anywhere modal
 window.onclick = function (event) {
-  if (event.target == modal) {
+  console.log(event.target.className);
+  if (event.target.className == "bg-modal") {
     modal.style.display = "none";
+    backBg.style.display = "none";
   }
 };
