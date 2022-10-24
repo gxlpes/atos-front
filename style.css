@@ -78,7 +78,23 @@ td:hover:not(.blank) {
   background-color: #00000045;
 }
 
-/* coloring tables */
+p {
+  font-size: 12px;
+}
+
+p:first-child {
+  text-align: left;
+}
+
+small {
+  font-size: 11px;
+}
+
+.blank {
+  border: none;
+}
+
+/* coloring tables and their attributes*/
 hr {
   width: 25%;
   margin-block: 50px;
@@ -114,23 +130,6 @@ hr {
 
 .lanthanide {
   background-color: #c6ffff;
-}
-
-/* styling components */
-p {
-  font-size: 12px;
-}
-
-p:first-child {
-  text-align: left;
-}
-
-small {
-  font-size: 11px;
-}
-
-.blank {
-  border: none;
 }
 
 /* modal setup */
@@ -216,16 +215,6 @@ button:hover {
 }
 
 /* legend styles */
-
-#project,
-#legend {
-  margin-left: 100px;
-}
-
-#project {
-  margin-top: 50px;
-}
-
 #legend {
   margin-inline: 0;
   display: flex;
@@ -267,13 +256,15 @@ button:hover {
 
 /* footer styles */
 footer {
+  margin-top: 50px;
   text-align: center;
+  margin-inline: auto;
   margin-bottom: 25px;
 }
 
 /* scroll style */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 7px;
 }
 ::-webkit-scrollbar-track {
   background: #f1f1f1;

@@ -36,7 +36,6 @@ buttonDismiss.addEventListener("click", function () {
 
 // click anywhere modal
 window.onclick = function (event) {
-  console.log(event.target.className);
   if (event.target.className == "bg-modal") {
     modal.style.display = "none";
     backBg.style.display = "none";
