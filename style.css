@@ -1,16 +1,33 @@
+:root {
+  --td-wsize: 85px;
+  --td-hsize: 25px;
+
+  --blue-main: #0596ff;
+
+  --noble-clr: #ffe4c7;
+  --non-clr: #ffffca;
+  --alka-clr: #f7c6c3;
+  --metal-clr: #e2efc8;
+  --alka-e-clr: #d2d3ff;
+  --post-clr: #cfffc9;
+  --tran-clr: #c4ddff;
+  --lanth-clr: #c6ffff;
+
+  font-family: "Roboto", sans-serif;
+}
+
 /* reset CSS proprities */
 html {
   scroll-behavior: smooth;
 }
 
-body,
 table {
   margin: auto;
   padding: 0;
   box-sizing: border-box;
   color: #3f3f3f;
-  font-family: "Roboto", sans-serif;
   animation: appear 0.3s ease-in-out;
+  border-spacing: 5px;
 }
 
 p,
@@ -21,15 +38,15 @@ small {
 }
 
 /* header */
-.logo {
-  width: 50px;
-}
-
 header {
   display: flex;
   justify-content: space-between;
   margin-top: 15px;
   padding-inline: 150px;
+}
+
+.logo {
+  width: 50px;
 }
 
 .nav-link:last-child {
@@ -38,13 +55,13 @@ header {
 
 .nav-link {
   text-decoration: none;
-  color: #0596ff;
+  color: var(--blue-main);
   font-weight: bolder;
   transition: all 0.3s ease-in-out;
 }
 
 .nav-link:hover {
-  color: #005795;
+  opacity: 0.5;
 }
 
 /* styling table */
@@ -54,18 +71,19 @@ h1 {
 }
 
 td {
-  border: 1px solid #3f3f3f;
-  min-width: 85px;
-  height: 25px;
+  border: none;
+  min-width: var(--td-size);
+  width: 85px;
+  height: var(--td-hsize);
   text-align: center;
-  padding: 1.5px;
+  padding: 3.5px;
 }
 
 td:hover:not(.blank) {
   scale: 1.05;
   box-shadow: 0px 0px 5px #bababa;
   cursor: pointer;
-  filter: brightness(80%);
+  background-color: var(--blue-main);
   transition: all 0.2s ease-in-out;
 }
 
@@ -78,58 +96,56 @@ td:hover:not(.blank) {
   background-color: #00000045;
 }
 
-p {
-  font-size: 12px;
+.blank {
+  border: none;
+  width: var(--td-wsize);
 }
 
+/* styling element */
 p:first-child {
   text-align: left;
 }
 
-small {
-  font-size: 11px;
+.element-name {
+  font-weight: bolder;
+  font-size: 25px;
 }
 
-.blank {
-  border: none;
+.element-desc {
+  font-size: 10px;
 }
 
-/* coloring tables and their attributes*/
-hr {
-  width: 25%;
-  margin-block: 50px;
-}
-
+/* coloring elements*/
 .noble-gas {
-  background-color: #ffe4c7;
+  background-color: var(--noble-clr);
 }
 
 .non-metal {
-  background-color: #ffffca;
+  background-color: var(--non-clr);
 }
 
 .alkali-metal {
-  background-color: #f7c6c3;
+  background-color: var(--alka-clr);
 }
 
 .metal {
-  background-color: #e2efc8;
+  background-color: var(--metal-clr);
 }
 
 .alkali-earth {
-  background-color: #d2d3ff;
+  background-color: var(--alka-e-clr);
 }
 
 .post {
-  background-color: #cfffc9;
+  background-color: var(--post-clr);
 }
 
 .transition {
-  background-color: #c4ddff;
+  background-color: var(--tran-clr);
 }
 
 .lanthanide {
-  background-color: #c6ffff;
+  background-color: var(--lanth-clr);
 }
 
 /* modal setup */
@@ -147,7 +163,7 @@ hr {
 
 /* modal styles */
 .modal {
-  display: none;
+  display: flex;
 
   flex-direction: column;
   align-items: center;
@@ -179,12 +195,17 @@ p:first-child {
 .title {
   display: flex;
   gap: 5px;
-  flex-direction: row-reverse;
+  flex-direction: column;
+  text-align: center;
 }
 
-.element-desc {
+.element-d {
   margin-top: 15px;
   font-size: 15px;
+}
+
+.element-n {
+  text-align: center;
 }
 
 button {
@@ -220,15 +241,41 @@ button:hover {
   align-items: center;
   justify-content: center;
   gap: 35px;
+  margin: 100px 0px 100px 0px;
 }
 
-.legend-all {
+.cell-legend {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  gap: 20px;
+  gap: 9px;
+
+  background-color: var(--blue-main);
+  width: 135px;
+  height: 135px;
+  padding: 15px;
+  border-radius: 2px;
 }
 
+.element-desc-legend {
+  text-align: left;
+}
+
+.element-desc-legend:nth-child(3) {
+  text-align: center;
+}
+
+small {
+  text-align: center;
+}
+
+.element-name-legend {
+  font-size: 25px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+/* elements description */
 .legend-item {
   display: flex;
   gap: 5px;
@@ -242,20 +289,20 @@ button:hover {
   border-radius: 100%;
 }
 
-.cell-legend {
+.legend-all {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  background-color: #5ab2f0;
-  width: 135px;
-  height: 95px;
-  padding: 15px;
-  border-radius: 2px;
+  gap: 20px;
+}
+
+.element-legend {
+  font-size: 15px;
 }
 
 /* footer styles */
 footer {
-  margin-top: 50px;
+  margin: 50px 0px 25px 0px;
   text-align: center;
   margin-inline: auto;
   margin-bottom: 25px;
@@ -269,7 +316,7 @@ footer {
   background: #f1f1f1;
 }
 ::-webkit-scrollbar-thumb {
-  background: #0596ff;
+  background: var(--blue-main);
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #555;

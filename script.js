@@ -5,9 +5,10 @@ const backBg = document.querySelector(".bg-modal");
 // modal setup
 const modal = document.querySelector(".modal");
 const buttonDismiss = document.querySelector("button");
-const elementNameM = document.querySelector(".element-name");
-const elementNumberM = document.querySelector(".element-number");
-const elementDescM = document.querySelector(".element-desc");
+
+const elementNameM = document.querySelector(".modal-element-symbol");
+const elementNumberM = document.querySelector(".modal-element-number");
+const elementDescM = document.querySelector(".element-d");
 
 // function for each cell
 td.forEach((td) => {
