@@ -283,6 +283,10 @@ small {
   margin-top: 10px;
 }
 
+.purple {
+  background-color: purple;
+}
+
 .circle {
   width: 20px;
   height: 20px;
