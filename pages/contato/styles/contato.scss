@@ -1,0 +1,199 @@
+@use "../../../global/global.css" as *;
+@use "../../main/styles/main.css" as *;
+
+#contato {
+  background-color: var(--clr-sec-1100);
+  padding: 50px 220px;
+
+  .header-container {
+    p {
+      color: var(--clr-sec-500);
+      font-size: var(--ft-l);
+    }
+
+    h1 {
+      color: var(--clr-w);
+      font-size: var(--ft-xxl);
+      margin-bottom: 80px;
+    }
+  }
+
+  .form-container-all {
+    display: flex;
+    gap: 10px;
+
+    .side-panel {
+      padding: 60px;
+      background-color: var(--clr-b);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      color: var(--clr-sec-500);
+
+      img {
+        margin-top: 6px;
+      }
+
+      p:first-child {
+        color: var(--clr-w);
+        margin-bottom: 15px;
+      }
+
+      .endereco-panel {
+        display: flex;
+        align-items: flex-start;
+        gap: 5px;
+      }
+
+      .contato-panel {
+        display: flex;
+        align-items: flex-start;
+        gap: 5px;
+      }
+
+      .telefone-panel {
+        display: flex;
+        gap: 5px;
+      }
+
+      p:last-child {
+        margin-top: 15px;
+      }
+
+      .social-icons {
+        margin-left: 10px;
+        margin-top: 60px;
+        display: flex;
+        gap: 32px;
+
+        svg {
+          fill: var(--clr-prim-100);
+        }
+      }
+    }
+
+    .form-container {
+      background-color: var(--clr-w);
+      color: black;
+      padding: 60px;
+      width: 700px;
+
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .first-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+
+        label {
+          display: flex;
+          flex-direction: column;
+        }
+
+        input {
+          width: 300px;
+        }
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      label {
+        margin: 20px 0 7px 0;
+        font-weight: bolder;
+      }
+
+      input {
+        padding: 12px;
+        height: 26px;
+        background-color: var(--clr-sec-200);
+        border-radius: 5px;
+        border: none;
+      }
+
+      textarea {
+        padding: 12px;
+        background-color: var(--clr-sec-200);
+        border-radius: 5px;
+        border: none;
+        margin-bottom: 20px;
+      }
+
+      button {
+        font-weight: bolder;
+      }
+    }
+  }
+}
+
+#lojas {
+  background-color: var(--clr-sec-100);
+  padding: 50px 220px;
+
+  h1 {
+    color: var(--clr-sec-1100);
+    font-size: 64px;
+    margin-bottom: 60px;
+  }
+
+  .cards-container {
+    display: flex;
+    gap: 40px;
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      background-color: var(--clr-w);
+      width: 560px;
+
+      img {
+        width: 560px;
+        height: 260px;
+      }
+
+      .card-desc {
+        padding: 32px;
+
+        .retangle-yellow {
+          width: 12px;
+          height: 8px;
+          background-color: var(--clr-prim-100);
+        }
+
+        .card-header {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+        }
+
+        .list-card {
+          margin-top: 15px;
+          display: flex;
+          gap: 60px;
+
+          ul {
+            margin-left: 25px;
+            padding-left: 10px;
+            border-left: 2px solid var(--clr-sec-200);
+          }
+        }
+
+        .card-footer {
+          display: flex;
+          align-items: center;
+
+          img {
+            width: 15px;
+            height: 15px;
+            margin-top: 32px;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}

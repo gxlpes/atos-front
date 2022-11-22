@@ -1,0 +1,46 @@
+@use "../../../global/global.css" as *;
+@use "../../main/styles/main.css" as *;
+
+#termo {
+  
+   .header-container {
+    padding: 50px 220px;
+
+    background-color: var(--clr-sec-1100);
+      p {
+        color: var(--clr-sec-500);
+        font-size: var(--ft-l);
+      }
+  
+      h1 {
+        color: var(--clr-w);
+        font-size: var(--ft-xxl);
+        margin-bottom: 80px;
+      }
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--clr-w);
+        padding: 50px 220px;
+
+        h3 {
+            color: var(--clr-sec-1100);
+            font-size: var(--ft-l);
+            margin-bottom: 20px;
+        }
+
+        li {
+            color: var(--clr-sec-1000);
+            font-size: var(--ft-m);
+            margin-bottom: 15px;
+            width: 750px;;
+        }
+
+        ul {
+            margin-bottom: 80px;
+        }
+    }
+
+}

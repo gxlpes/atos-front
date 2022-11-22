@@ -1,0 +1,91 @@
+@use "../../../global/global.css" as *;
+@use "../../main/styles/main.css" as *;
+
+#vantagens {
+  background-color: var(--clr-b);
+  padding: 120px 220px;
+
+  h1 {
+    color: var(--clr-w);
+    font-size: var(--ft-xxl);
+  }
+
+  .card-row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card-info {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+
+    .main-title {
+      color: var(--clr-w);
+    }
+
+    .box-cards {
+      margin-top: 12px;
+      background-color: var(--clr-b);
+      width: 1160px;
+      padding: 32px;
+      border-radius: 5px;
+
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+
+      svg {
+        fill: var(--clr-prim-100);
+      }
+
+      .card {
+        width: 250px;
+
+        .title-card {
+          color: var(--clr-w);
+          font-size: var(--ft-m);
+        }
+
+        .desc-card {
+          color: var(--clr-sec-500);
+          font-size: var(--ft-s);
+        }
+      }
+    }
+  }
+}
+
+#perguntas {
+  padding: 120px 220px;
+  width: 1160px;
+
+  h1 {
+    font-size: var(--ft-xxl);
+    color: var(--clr-b);
+  }
+
+  ul {
+    margin-top: 90px;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    width: 1160px;
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  li:nth-child(odd) {
+    background-color: var(--clr-sec-100);
+  }
+
+  .yellow-retangle {
+    width: 12px;
+    height: 8px;
+    background-color: var(--clr-prim-100);
+  }
+}

@@ -1,0 +1,96 @@
+@use "../../../global/global.css" as *;
+@use "../../main/styles/main.css" as *;
+
+#bicicletas {
+  .title {
+    padding: 60px 220px;
+    background-color: var(--clr-sec-1100);
+
+    p {
+      color: var(--clr-sec-500);
+    }
+  }
+
+  button {
+    font-weight: bolder;
+  }
+
+  .bike {
+    padding-inline: 220px;
+    margin-top: 120px;
+
+    display: flex;
+    gap: 40px;
+
+    .bike-photo {
+      width: 500px;
+      height: 340px;
+      border-radius: 5px;
+    }
+
+    .yellow-retangle {
+      margin-top: 10px;
+      width: 12px;
+      height: 8px;
+      background-color: var(--clr-prim-100);
+    }
+
+    .article-text {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 5px;
+      }
+
+      .white-h3 {
+        color: var(--clr-w);
+      }
+
+      h3 {
+        color: var(--clr-sec-1100);
+        font-size: var(--ft-xl);
+      }
+
+      .white-p,
+      .white-ul {
+        color: var(--clr-sec-500);
+      }
+
+      p {
+        width: 445px;
+        color: var(--clr-sec-800);
+        font-size: var(--ft-m);
+      }
+    }
+
+    .other {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .balls {
+        width: 52px;
+        height: 52px;
+      }
+    }
+  }
+
+  .black-bg {
+    background-color: var(--clr-sec-1100);
+    position: absolute;
+    width: 1180px;
+    height: 460px;
+    left: 420px;
+    top: 848px;
+    z-index: -1;
+  }
+}
+
+.bike:last-child {
+  margin-bottom: 120px;
+}

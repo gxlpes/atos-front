@@ -1,0 +1,253 @@
+@use "../../../global/global.css" as *;
+@use "../../main/styles/main.css" as *;
+
+#nimbus {
+  background-color: var(--clr-sec-1100);
+  padding: 60px 220px;
+
+  .header {
+    p {
+      color: var(--clr-sec-500);
+      font-size: var(--ft-xl);
+    }
+
+    h1 {
+      color: var(--clr-w);
+      font-size: var(--ft-xxl);
+    }
+  }
+
+  .content {
+    margin-top: 60px;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+
+    .media {
+      img {
+        border-radius: 5px;
+      }
+    }
+
+    .text {
+      .main-text {
+        color: var(--clr-sec-500);
+        font-size: var(--ft-l);
+      }
+    }
+
+    .main-photo {
+      width: 600px;
+      height: 440px;
+      margin-bottom: 15px;
+    }
+
+    .side-photos {
+      display: flex;
+      gap: 20px;
+
+      .side-photo {
+        width: 290px;
+        height: 212px;
+      }
+    }
+
+    .little-section {
+      margin-top: 32px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .little {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .extra-title {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        font-size: var(--ft-xs);
+        background-color: var(--clr-b);
+        color: var(--clr-sec-600);
+        padding: 4px 8px;
+        border-radius: 5px;
+      }
+    }
+
+    .card-info {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+
+      .main-title {
+        color: var(--clr-w);
+      }
+
+      .box-cards {
+        margin-top: 12px;
+        background-color: var(--clr-b);
+        width: 465px;
+        padding: 32px;
+        border-radius: 5px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        svg {
+          fill: var(--clr-prim-100);
+        }
+
+        .card {
+          width: 250px;
+
+          .title-card {
+            color: var(--clr-w);
+            font-size: var(--ft-m);
+          }
+
+          .desc-card {
+            color: var(--clr-sec-500);
+            font-size: var(--ft-s);
+          }
+        }
+      }
+
+      .ficha-tec {
+        margin-top: 40px;
+        width: 520px;
+
+        .title-ficha {
+          color: var(--clr-w);
+        }
+
+        .table-data {
+          padding: 32px;
+          margin-top: 12px;
+          background-color: var(--clr-b);
+          display: flex;
+          justify-content: space-between;
+
+          li {
+            width: 230px;
+            color: var(--clr-sec-400);
+            margin-bottom: 12px;
+            padding-bottom: 2px;
+            border-bottom: 1px solid var(--clr-sec-1100);
+          }
+
+          ul:last-child {
+            text-align: right;
+          }
+        }
+      }
+
+      .card-row {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    .table-data {
+      display: flex;
+    }
+  }
+}
+
+#escolha {
+  padding-inline: 220px;
+
+  .title-escolha {
+    margin-top: 92px;
+    color: var(--clr-sec-1100);
+    font-size: var(--ft-xxl);
+    font-weight: bolder;
+  }
+
+  .container-cards {
+    margin-top: 40px;
+    width: 1160px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card {
+    img {
+      width: 560px;
+      height: 340px;
+      object-fit: cover;
+    }
+
+    .label {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+
+      .title-card {
+        font-size: var(--ft-xl);
+        color: var(--clr-sec-1100);
+        font-weight: 600;
+      }
+
+      .title-price {
+        font-size: var(--ft-m);
+        color: var(--clr-sec-800);
+        font-weight: 600;
+      }
+
+      .yellow-retangle {
+        margin-top: 20px;
+        width: 12px;
+        height: 8px;
+        background-color: var(--clr-prim-100);
+      }
+    }
+  }
+}
+
+#seguro {
+  padding-block: 60px;
+  background-color: var(--clr-sec-1100);
+  display: flex;
+  gap: 40px;
+
+  .image {
+    overflow: hidden;
+    position: absolute;
+    width: 680px;
+    height: 756px;
+    left: 100px;
+    top: 2144px;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 525px;
+    margin-left: 820px;
+
+    p {
+      color: var(--clr-sec-500);
+      font-size: var(--ft-l);
+    }
+
+    h1 {
+      font-size: var(--ft-xxl);
+      width: 600px;
+      padding-block: 5px;
+    }
+
+    button {
+      font-weight: bolder;
+    }
+  }
+}
+
+footer {
+  padding-top: 200px;
+}
