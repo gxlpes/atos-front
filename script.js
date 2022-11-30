@@ -1,77 +1,69 @@
-const nameForm = document.getElementById("nome");
-const sobrenomeForm = document.getElementById("sobrenome");
-const loginForm = document.getElementById("login");
-const emailForm = document.getElementById("email");
-const senhaForm = document.getElementById("senha");
-const cepForm = document.getElementById("cep");
-const enderecoForm = document.getElementById("endereco");
-const complementoForm = document.getElementById("complemento");
-const bairroForm = document.getElementById("bairro");
-const cidadeForm = document.getElementById("cidade");
-const estadoForm = document.getElementById("estado");
-const githubForm = document.getElementById("github");
-const academiaForm = document.getElementById("academia");
-const professorForm = document.getElementById("professor");
-const termoForm = document.getElementById("termos");
-const infoForm = document.getElementById("professor");
+const buttonStartGame = document.getElementById("start");
+const nameColor = document.querySelector(".name-color");
+const colorBox = document.querySelectorAll(".color-box");
+let points = document.querySelector(".points");
 
-const buttonSubmmit = document.querySelector(".btn");
+buttonStartGame.addEventListener("click", () => startGame());
 
-nameForm.addEventListener("change", () => {
-  loginForm.value = nameForm.value.toLowerCase();
-});
-
-sobrenomeForm.addEventListener("change", () => {
-  loginForm.value += "." + sobrenomeForm.value.toLowerCase();
-});
-
-cepForm.addEventListener("change", () => {
-  if (cepForm.value.length == 8) {
-    getDataFromCEP(cepForm.value);
-  } else {
-    document.getElementById("cep-erro").classList.remove("d-none");
-  }
-});
-
-const getDataFromCEP = async (cep) => {
-  let response = await fetch("https://viacep.com.br/ws/" + cep + "/json/");
-  let cepData = await response.json();
-  setInputFormWithData(cepData);
+const startGame = async () => {
+  startCountdown(3);
+  formatText();
 };
 
-const setInputFormWithData = (cepData) => {
-  if (cepData.hasOwnProperty("erro")) {
-    document.getElementById("cep-erro").classList.remove("d-none");
-  } else {
-    document.getElementById("cep-erro").classList.add("d-none");
-    enderecoForm.value = cepData.logradouro;
-    bairroForm.value = cepData.bairro;
-    cidadeForm.value = cepData.localidade;
-    estadoForm.value = cepData.uf;
-  }
+const formatText = async () => {
+  nameColor.innerHTML = await randomName();
+  nameColor.style.color = await randomColor();
 };
 
-buttonSubmmit.addEventListener("click", (e) => {
-  e.preventDefault();
-  showResults();
+const randomName = async () => {
+  const response = await fetch("../data/names.json");
+  const json = await response.json();
+  const name = await json[randomNumber()];
+  return await Promise.resolve(name);
+};
+
+const randomColor = async () => {
+  const response = await fetch("../data/colors.json");
+  const json = await response.json();
+  const color = await json[randomNumber()];
+  return await Promise.resolve(color);
+};
+
+const randomNumber = () => {
+  return Math.floor(Math.random() * 9 + 1);
+};
+
+const startCountdown = (timer) => {
+  let timeleft = timer;
+  let downTimer = setInterval(function () {
+    if (timeleft <= 0) {
+      clearInterval(downTimer);
+      document.getElementById("countdown").innerHTML = "0";
+      document.querySelector(".error").style.display = "block";
+    } else {
+      document.getElementById("countdown").innerHTML = timeleft;
+    }
+    timeleft -= 1;
+  }, 1000);
+};
+
+const randomBoxes = () => {
+  let boxes = document.querySelectorAll(".color-box");
+  boxes.forEach(async (el) => {
+    el.style.backgroundColor = await randomColor();
+  });
+};
+
+colorBox.forEach((box) => {
+  box.addEventListener("click", (e) => {
+    if (e.target.classList[1] == nameColor.style.color) {
+      startNewGame();
+    }
+  });
 });
 
-const showResults = () => {
-  document.getElementById("tabela-dados").classList.remove("d-none");
-  document.getElementById("t-nome").innerHTML = nameForm.value;
-  document.getElementById("t-sobrenome").innerHTML = sobrenomeForm.value;
-  document.getElementById("t-email").innerHTML = emailForm.value;
-  document.getElementById("t-login").innerHTML = loginForm.value;
-  document.getElementById("t-senha").innerHTML = senhaForm.value;
-  document.getElementById("t-cep").innerHTML = cepForm.value;
-  document.getElementById("t-cidade").innerHTML = cidadeForm.value;
-  document.getElementById("t-endereco").innerHTML = enderecoForm.value;
-  document.getElementById("t-complemento").innerHTML = complementoForm.value;
-  document.getElementById("t-bairro").innerHTML = bairroForm.value;
-  document.getElementById("t-estado").innerHTML = estadoForm.value;
-  document.getElementById("t-github").innerHTML = githubForm.value;
-  document.getElementById("t-academia").innerHTML = academiaForm.value;
-  document.getElementById("t-professor").innerHTML = professorForm.value;
-  document.getElementById("t-termos").innerHTML = termoForm.value;
-  document.getElementById("t-info").innerHTML = infoForm.value;
+const startNewGame = () => {
+  startCountdown(3);
+  formatText();
+  points.innerHTML++;
 };
