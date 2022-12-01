@@ -1,0 +1,59 @@
+:root {
+  --clr-main-color: #1c8a99;
+  --clr-font: #4c4c4c;
+}
+
+h1,
+h3,
+h3,
+h4,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  color: var(--clr-font);
+  animation: loadAppear 0.5s ease-in-out;
+}
+
+h3 {
+  color: var(--clr-font);
+}
+
+.text-colored {
+  color: var(--clr-main-color);
+  font-weight: 700;
+}
+
+button {
+  border: none;
+  padding: 15px 20px 15px 20px;
+  border-radius: 4px;
+  transition: 0.3s all ease-in-out;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 4px 0px;
+  font-size: 14px;
+}
+
+button:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.hover-color:hover {
+  opacity: unset;
+  background-color: var(--clr-main-color);
+  color: white;
+}
+
+@keyframes loadAppear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}

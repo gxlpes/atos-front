@@ -1,0 +1,79 @@
+header {
+  margin-top: 30px;
+  background-color: #f0f0f0;
+  width: 80vw;
+  border-radius: 8px;
+
+  padding-block: 50px;
+  margin-inline: auto;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 55px;
+}
+
+.stats {
+  margin-top: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+.stats-info {
+  border: 1px solid var(--clr-main-color);
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.color-name {
+  font-size: 55px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+#timer {
+  font-size: 40px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+main {
+  padding-block: 100px;
+  padding-inline: 100px;
+
+  display: flex;
+  gap: 100px;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title-description {
+  font-size: 25px;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#start {
+  width: 500px;
+  background-color: var(--clr-main-color);
+  color: white;
+}

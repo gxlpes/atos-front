@@ -27,12 +27,7 @@ function arrayOfNumbers(start, end) {
   return myArray;
 }
 
-buttonStartGame.addEventListener("click", () => startGame());
-
-const startGame = async () => {
-  formatText();
-  startCountdown(3);
-};
+buttonStartGame.addEventListener("click", () => startCountdown(3));
 
 const formatText = async () => {
   colorName.innerHTML = await randomName(1);
@@ -40,16 +35,16 @@ const formatText = async () => {
 };
 
 const startCountdown = (timer) => {
+  formatText();
   let timeleft = timer;
   let downTimer = setInterval(function () {
     if (timeleft <= 0) {
       clearInterval(downTimer);
-      document.getElementById("countdown").innerHTML = "0";
-      document.querySelector(".error").style.display = "block";
+      document.getElementById("timer").innerHTML = "0";
       modal.style.display = "flex";
       backBg.style.display = "block";
     } else {
-      document.getElementById("countdown").innerHTML = timeleft;
+      document.getElementById("timer").innerHTML = timeleft;
     }
     timeleft -= 1;
   }, 1000);

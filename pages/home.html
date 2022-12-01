@@ -5,17 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/home.css" />
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/game/settings.css" />
     <title>Home | Sleeper Game</title>
   </head>
   <body>
-    <main>
-      <h1>Sleeper Game</h1>
-      <p>Jogue o jogo e teste suas habilidades cognitivas</p>
+    <div class="bg-modal"></div>
+    <div class="bg-modal"></div>
+    <div class="modal">
+      <div class="title">
+        <p class="description">Como jogar Sleeper Game</p>
+        <div class="description">
+          <ul>
+            <li>No Sleeper Game, você só precisa clicar no botão com a cor correspondente ao seu alvo</li>
+            <li>O alvo sempre será na <b>cor em que a palavra gerada na tela for escrita</b></li>
+            <li><b>Não durma</b> e clique na cor correta antes que o tempo acabe</li>
+          </ul>
+        </div>
+      </div>
       <div class="container-button">
-        <button>Github</button>
-        <a href="game.html"><button>Jogar</button></a>
-        <a href="results.html"><button>Resultados</button></a>
+        <button class="dismiss">Ok</button>
+      </div>
+    </div>
+
+    <main>
+      <img src="../assets/sleep.svg" />
+      <h1>Sleeper Game</h1>
+      <h3>Teste suas habilidades cognitivas e de <span class="text-colored">rapidez</span></h3>
+
+      <div class="container-button">
+        <a href="https://github.com/gxlpes/atos-front/tree/007_aula_291122" target="_blank"
+          ><button class="hover-color">Github</button></a
+        >
+        <button class="como-jogar hover-color">Como jogar</button>
+        <a href="game.html"><button class="hover-color">Jogar</button></a>
+        <a href="results.html"><button class="hover-color">Resultados</button></a>
       </div>
     </main>
   </body>
+  <script src="../scripts/home.js"></script>
 </html>

@@ -4,24 +4,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/game.css" />
+    <link rel="stylesheet" href="../styles/game/settings.css" />
+    <link rel="stylesheet" href="../styles/game/game.css" />
+    <link rel="stylesheet" href="../styles/global.css" />
     <title>Jogo | Sleeper Game</title>
   </head>
   <body>
-    <main>
-      <header>
-        <h3>Sleeper Game</h3>
-      </header>
-
-      <section>
-        <p>Ao clicar para iniciar, o jogo começará!</p>
-        <button id="start">Começar</button>
+    <header>
+      <h1>Sleeper Game</h1>
+      <section class="stats">
+        <p class="stats-info">Round <span class="round">1</span></p>
+        <p class="stats-info">Points <span class="points">0</span></p>
       </section>
+    </header>
 
+    <p class="color-name"></p>
+
+    <div id="timer"></div>
+
+    <main>
       <div class="bg-modal"></div>
+
       <div class="modal">
         <div class="title">
-          <p class="description">Você perdeu!</p>
           <p class="description">O que você deseja fazer?</p>
         </div>
         <p class="modal-text element-d"></p>
@@ -34,12 +39,10 @@
           <p class="description">Salvar progresso</p>
           <input class="input-name" text="name" placeholder="Digite seu nome" />
         </div>
-        <p class="modal-text element-d"></p>
         <button class="save-data">Salvar</button>
       </div>
 
-      <section>
-        <p>Round <span class="round">1</span></p>
+      <section class="game">
         <div class="colors">
           <div style="background: green" class="color-box"></div>
           <div style="background: yellow" class="color-box"></div>
@@ -51,12 +54,12 @@
           <div style="background: grey" class="color-box"></div>
           <div style="background: brown" class="color-box"></div>
         </div>
-        <p class="color-name"></p>
-        <div id="countdown"></div>
-        <p class="points">0</p>
-        <p class="error">Você perdeu!</p>
+      </section>
+
+      <section class="description">
+        <button id="start">Começar</button>
       </section>
     </main>
   </body>
-  <script src="../scripts/script.js"></script>
+  <script src="../scripts/game.js"></script>
 </html>

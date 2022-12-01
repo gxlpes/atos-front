@@ -1,0 +1,29 @@
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+
+  margin-top: 150px;
+  margin-inline: auto;
+  width: 500px;
+  text-align: center;
+}
+
+.container-button {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  text-align: left;
+
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+li {
+  font-size: 18px;
+}

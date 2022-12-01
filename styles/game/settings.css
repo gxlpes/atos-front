@@ -1,13 +1,19 @@
 .colors {
   display: flex;
   gap: 5px;
-  width: 200px;
+  overflow-wrap: break-word;
 }
 
 .color-box {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   cursor: pointer;
+
+  transition: all 0.15s ease-in-out;
+}
+
+.color-box:hover {
+  transform: scale(1.1);
 }
 
 /* colors */
@@ -49,8 +55,6 @@
 }
 
 /* modal */
-/* modal styles */
-
 .bg-modal {
   height: 100%;
   width: 100%;
@@ -59,8 +63,7 @@
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.492);
 }
 
 .modal,
@@ -69,7 +72,8 @@
 
   flex-direction: column;
   align-items: center;
-  background-color: #1a6295;
+  background-color: var(--clr-main-color);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   color: white;
 
   padding: 25px;
@@ -87,6 +91,10 @@
   margin: auto;
 
   text-align: left;
+}
+
+.dismiss {
+  width: 100px;
 }
 
 p:first-child {
@@ -108,24 +116,6 @@ p:first-child {
 
 .element-n {
   text-align: center;
-}
-
-button {
-  color: white;
-  margin-top: 25px;
-  width: 250px;
-  background-color: transparent;
-  border: 2px solid white;
-  padding: 10px;
-  border-radius: 5px;
-  filter: drop-shadow(0px 0px 2px #00000043);
-  transition: all 0.3s ease-in-out;
-}
-
-button:hover {
-  cursor: pointer;
-  background-color: #09273c;
-  border: 2px solid #09273c;
 }
 
 @keyframes appear {
