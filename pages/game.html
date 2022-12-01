@@ -12,28 +12,51 @@
       <header>
         <h3>Sleeper Game</h3>
       </header>
+
       <section>
         <p>Ao clicar para iniciar, o jogo começará!</p>
         <button id="start">Começar</button>
       </section>
-      <section>
-        <div class="colors">
-          <div class="color-box green"></div>
-          <div class="color-box yellow"></div>
-          <div class="color-box orange"></div>
-          <div class="color-box blue"></div>
-          <div class="color-box brown"></div>
-          <div class="color-box black"></div>
-          <div class="color-box grey"></div>
-          <div class="color-box purple"></div>
-          <div class="color-box red"></div>
+
+      <div class="bg-modal"></div>
+      <div class="modal">
+        <div class="title">
+          <p class="description">Você perdeu!</p>
+          <p class="description">O que você deseja fazer?</p>
         </div>
-        <p class="name-color"></p>
+        <p class="modal-text element-d"></p>
+        <button class="dismiss">Voltar a jogar</button>
+        <button class="save-progress">Registrar progresso</button>
+      </div>
+
+      <div class="second-modal">
+        <div class="title">
+          <p class="description">Salvar progresso</p>
+          <input class="input-name" text="name" placeholder="Digite seu nome" />
+        </div>
+        <p class="modal-text element-d"></p>
+        <button class="save-data">Salvar</button>
+      </div>
+
+      <section>
+        <p>Round <span class="round">1</span></p>
+        <div class="colors">
+          <div style="background: green" class="color-box"></div>
+          <div style="background: yellow" class="color-box"></div>
+          <div style="background: red" class="color-box"></div>
+          <div style="background: purple" class="color-box"></div>
+          <div style="background: orange" class="color-box"></div>
+          <div style="background: black" class="color-box"></div>
+          <div style="background: blue" class="color-box"></div>
+          <div style="background: grey" class="color-box"></div>
+          <div style="background: brown" class="color-box"></div>
+        </div>
+        <p class="color-name"></p>
         <div id="countdown"></div>
         <p class="points">0</p>
         <p class="error">Você perdeu!</p>
       </section>
     </main>
   </body>
-  <script src="../script.js"></script>
+  <script src="../scripts/script.js"></script>
 </html>
