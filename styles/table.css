@@ -1,0 +1,33 @@
+table {
+  background-color: #f0f0f0;
+  padding: 25px;
+  margin-inline: auto;
+  margin-top: 30px;
+}
+
+td,
+th,
+tr {
+  width: 200px;
+  text-align: left;
+}
+
+th {
+  background-color: var(--clr-main-color);
+  color: white;
+  padding: 5px;
+}
+
+button {
+  background-color: var(--clr-main-color);
+  color: white;
+  width: 250px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}

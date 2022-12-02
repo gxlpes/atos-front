@@ -28,12 +28,20 @@ h1 {
 }
 
 .stats-info {
-  border: 1px solid var(--clr-main-color);
+  border: 3px solid var(--clr-main-color);
   padding: 15px;
   border-radius: 4px;
 }
 
 .color-name {
+  margin-block: 20px;
+  font-size: 55px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.info-game {
+  margin: 50px;
   font-size: 55px;
   font-weight: bolder;
   text-align: center;
@@ -46,7 +54,6 @@ h1 {
 }
 
 main {
-  padding-block: 100px;
   padding-inline: 100px;
 
   display: flex;
@@ -76,4 +83,20 @@ main {
   width: 500px;
   background-color: var(--clr-main-color);
   color: white;
+}
+
+.container-content {
+  margin-top: 100px;
+  width: 80vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 35px;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }

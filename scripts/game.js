@@ -27,7 +27,7 @@ function arrayOfNumbers(start, end) {
   return myArray;
 }
 
-buttonStartGame.addEventListener("click", () => startCountdown(3));
+buttonStartGame.addEventListener("click", () => startNewGame());
 
 const formatText = async () => {
   colorName.innerHTML = await randomName(1);
@@ -35,7 +35,6 @@ const formatText = async () => {
 };
 
 const startCountdown = (timer) => {
-  formatText();
   let timeleft = timer;
   let downTimer = setInterval(function () {
     if (timeleft <= 0) {
@@ -48,6 +47,8 @@ const startCountdown = (timer) => {
     }
     timeleft -= 1;
   }, 1000);
+
+  formatText();
 };
 
 const randomName = async () => {
@@ -95,13 +96,20 @@ colorBox.forEach((box) => {
   });
 });
 
+const finishGame = () => {
+  modal.style.display = "flex";
+  backBg.style.display = "block";
+};
+
 const startNewGame = () => {
   formatText();
   points.innerHTML++;
+  initial = 3000;
+  count = initial;
 
   switch (round.innerHTML) {
     case "1":
-      startCountdown(3);
+      startCounter();
       break;
     case "2":
       startCountdown(2);
@@ -159,3 +167,47 @@ buttonSaveData.addEventListener("click", function () {
   secondModal.style.display = "none";
   backBg.style.display = "none";
 });
+
+////////////////////////
+
+var initial = 3000;
+var count = initial;
+var counter;
+var initialMillis;
+
+function timer() {
+  if (count <= 0) {
+    document.getElementById("timer").innerHTML = "0.000 secs";
+    clearInterval(counter);
+    finishGame();
+    return;
+  }
+  var current = Date.now();
+
+  count = count - (current - initialMillis);
+  initialMillis = current;
+  displayCount(count);
+}
+
+function displayCount(count) {
+  var res = count / 1000;
+  document.getElementById("timer").innerHTML = res.toPrecision(count.toString().length) + " secs";
+}
+
+function startCounter() {
+  clearInterval(counter);
+  initialMillis = Date.now();
+  counter = setInterval(timer, 1);
+}
+
+$("#stop").on("click", function () {
+  clearInterval(counter);
+});
+
+$("#reset").on("click", function () {
+  clearInterval(counter);
+  count = initial;
+  displayCount(count);
+});
+
+displayCount(initial);

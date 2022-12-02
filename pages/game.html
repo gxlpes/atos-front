@@ -18,20 +18,18 @@
       </section>
     </header>
 
-    <p class="color-name"></p>
-
-    <div id="timer"></div>
+    <div class="bg-modal"></div>
 
     <main>
-      <div class="bg-modal"></div>
-
       <div class="modal">
         <div class="title">
-          <p class="description">O que você deseja fazer?</p>
+          <p>O que você deseja fazer?</p>
         </div>
-        <p class="modal-text element-d"></p>
-        <button class="dismiss">Voltar a jogar</button>
-        <button class="save-progress">Registrar progresso</button>
+        <div class="container-buttons">
+          <button class="button-modal dismiss">Voltar a jogar</button>
+          <button class="button-modal save-progress">Registrar progresso</button>
+          <a href="../pages/home.html"><button class="button-modal save-progress">Home</button></a>
+        </div>
       </div>
 
       <div class="second-modal">
@@ -42,23 +40,31 @@
         <button class="save-data">Salvar</button>
       </div>
 
-      <section class="game">
-        <div class="colors">
-          <div style="background: green" class="color-box"></div>
-          <div style="background: yellow" class="color-box"></div>
-          <div style="background: red" class="color-box"></div>
-          <div style="background: purple" class="color-box"></div>
-          <div style="background: orange" class="color-box"></div>
-          <div style="background: black" class="color-box"></div>
-          <div style="background: blue" class="color-box"></div>
-          <div style="background: grey" class="color-box"></div>
-          <div style="background: brown" class="color-box"></div>
+      <div class="container-content">
+        <div class="left-side">
+          <section class="game">
+            <div class="colors">
+              <div style="background: green" class="color-box"></div>
+              <div style="background: yellow" class="color-box"></div>
+              <div style="background: red" class="color-box"></div>
+              <div style="background: purple" class="color-box"></div>
+              <div style="background: orange" class="color-box"></div>
+              <div style="background: black" class="color-box"></div>
+              <div style="background: blue" class="color-box"></div>
+              <div style="background: grey" class="color-box"></div>
+              <div style="background: brown" class="color-box"></div>
+            </div>
+          </section>
+          <section class="description">
+            <button id="start">Começar</button>
+          </section>
         </div>
-      </section>
 
-      <section class="description">
-        <button id="start">Começar</button>
-      </section>
+        <section class="info-game">
+          <h3 class="color-name">&nbsp;</h3>
+          <p id="timer">&nbsp;</p>
+        </section>
+      </div>
     </main>
   </body>
   <script src="../scripts/game.js"></script>

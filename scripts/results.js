@@ -1,5 +1,5 @@
 let results = JSON.parse(localStorage.getItem("session"));
-const table = document.querySelector("table");
+const tbody = document.querySelector("tbody");
 
 results.map((el) => {
   let tr = document.createElement("tr");
@@ -10,5 +10,5 @@ results.map((el) => {
     tr.appendChild(td);
   });
 
-  table.appendChild(tr);
+  tbody.appendChild(tr);
 });
