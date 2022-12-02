@@ -34,23 +34,6 @@ const formatText = async () => {
   colorName.style.color = await randomColor(1);
 };
 
-const startCountdown = (timer) => {
-  let timeleft = timer;
-  let downTimer = setInterval(function () {
-    if (timeleft <= 0) {
-      clearInterval(downTimer);
-      document.getElementById("timer").innerHTML = "0";
-      modal.style.display = "flex";
-      backBg.style.display = "block";
-    } else {
-      document.getElementById("timer").innerHTML = timeleft;
-    }
-    timeleft -= 1;
-  }, 1000);
-
-  formatText();
-};
-
 const randomName = async () => {
   const response = await fetch("../data/names.json");
   const json = await response.json();
@@ -92,47 +75,60 @@ const randomBoxes = () => {
 
 colorBox.forEach((box) => {
   box.addEventListener("click", (e) => {
-    if (e.target.style.background == colorName.style.color) startNewGame();
+    if (e.target.style.background == colorName.style.color) {
+      points.innerHTML++;
+      startNewGame();
+    }
   });
 });
 
 const finishGame = () => {
   modal.style.display = "flex";
   backBg.style.display = "block";
+  points.innerHTML = 0;
 };
 
 const startNewGame = () => {
   formatText();
-  points.innerHTML++;
-  initial = 3000;
-  count = initial;
 
   switch (round.innerHTML) {
     case "1":
+      initial = 3000;
+      count = initial;
       startCounter();
       break;
     case "2":
-      startCountdown(2);
+      initial = 3000;
+      count = initial;
+      startCounter();
       break;
     case "3":
-      startCountdown(2);
+      initial = 3000;
+      count = initial;
+      startCounter();
       randomBoxes();
       break;
     case "4":
-      startCountdown(1.7);
+      initial = 1700;
+      count = initial;
+      startCounter();
       randomBoxes();
       break;
     case "5":
-      startCountdown(1.5);
+      initial = 1500;
+      count = initial;
+      startCounter();
       randomBoxes();
       break;
     case "6":
-      startCountdown(1);
+      initial = 1000;
+      count = initial;
+      startCounter(1);
       randomBoxes();
       break;
   }
 
-  if (points.innerHTML % 10 === 0) round.innerHTML++;
+  if (points.innerHTML % 10 === 0 && points.innerHTML != 0) round.innerHTML++;
 };
 
 buttonDismiss.addEventListener("click", function () {
@@ -199,15 +195,5 @@ function startCounter() {
   initialMillis = Date.now();
   counter = setInterval(timer, 1);
 }
-
-$("#stop").on("click", function () {
-  clearInterval(counter);
-});
-
-$("#reset").on("click", function () {
-  clearInterval(counter);
-  count = initial;
-  displayCount(count);
-});
 
 displayCount(initial);
