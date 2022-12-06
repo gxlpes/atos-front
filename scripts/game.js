@@ -78,6 +78,8 @@ colorBox.forEach((box) => {
     if (e.target.style.background == colorName.style.color) {
       points.innerHTML++;
       startNewGame();
+    } else {
+      finishGame();
     }
   });
 });
@@ -86,6 +88,7 @@ const finishGame = () => {
   modal.style.display = "flex";
   backBg.style.display = "block";
   points.innerHTML = 0;
+  clearInterval(counter);
 };
 
 const startNewGame = () => {
@@ -173,7 +176,7 @@ var initialMillis;
 
 function timer() {
   if (count <= 0) {
-    document.getElementById("timer").innerHTML = "0.000 secs";
+    document.getElementById("timer").innerHTML = "0:000 segundos";
     clearInterval(counter);
     finishGame();
     return;
@@ -187,7 +190,8 @@ function timer() {
 
 function displayCount(count) {
   var res = count / 1000;
-  document.getElementById("timer").innerHTML = res.toPrecision(count.toString().length) + " secs";
+  let convert = res.toString().replace(".", ":");
+  document.getElementById("timer").innerHTML = convert + " segundos";
 }
 
 function startCounter() {
