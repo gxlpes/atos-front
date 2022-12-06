@@ -1,5 +1,6 @@
 // results
 const resultsButton = document.querySelector(".results");
+const nameUser = document.querySelector(".input-name");
 
 // modal setup
 const modal = document.querySelector(".modal");
@@ -9,10 +10,7 @@ const buttonSaveProgress = document.querySelector(".save-progress");
 const buttonSaveData = document.querySelector(".save-data");
 const backBg = document.querySelector(".bg-modal");
 
-const elementNameM = document.querySelector(".modal-element-symbol");
-const elementNumberM = document.querySelector(".modal-element-number");
-const elementDescM = document.querySelector(".element-d");
-
+// game setup
 const buttonStartGame = document.getElementById("start");
 const colorName = document.querySelector(".color-name");
 const colorBox = document.querySelectorAll(".color-box");
@@ -153,29 +151,30 @@ buttonSaveProgress.addEventListener("click", function () {
 });
 
 buttonSaveData.addEventListener("click", function () {
-  objectToSave = {
-    rounds: round.innerHTML,
-    points: points.innerHTML,
-    name: document.querySelector(".input-name").value,
-  };
+  if (nameUser.value.length > 0) {
+    objectToSave = {
+      rounds: round.innerHTML,
+      points: points.innerHTML,
+      name: nameUser.value,
+    };
 
-  let rsp = [];
-  let res = JSON.parse(localStorage.getItem("session"));
-  if (res == null) {
-    rsp.push(objectToSave);
-    console.log(rsp);
-    localStorage.setItem("session", JSON.stringify(rsp));
-  } else {
-    res.push(objectToSave);
-    localStorage.setItem("session", JSON.stringify(res));
+    // localStorage setup
+    let rsp = [];
+    let res = JSON.parse(localStorage.getItem("session"));
+    if (res == null) {
+      rsp.push(objectToSave);
+      localStorage.setItem("session", JSON.stringify(rsp));
+    } else {
+      res.push(objectToSave);
+      localStorage.setItem("session", JSON.stringify(res));
+    }
+
+    secondModal.style.display = "none";
+    modal.style.display = "flex";
   }
-
-  secondModal.style.display = "none";
-  backBg.style.display = "none";
 });
 
-////////////////////////
-
+// timer
 var initial = 3000;
 var count = initial;
 var counter;
