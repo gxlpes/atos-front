@@ -19,6 +19,8 @@ const colorBox = document.querySelectorAll(".color-box");
 let points = document.querySelector(".points");
 let round = document.querySelector(".round");
 
+let gameStarted = false;
+
 function arrayOfNumbers(start, end) {
   let myArray = [];
   for (let i = start; i <= end; i++) {
@@ -75,11 +77,13 @@ const randomBoxes = () => {
 
 colorBox.forEach((box) => {
   box.addEventListener("click", (e) => {
-    if (e.target.style.background == colorName.style.color) {
-      points.innerHTML++;
-      startNewGame();
-    } else {
-      finishGame();
+    if (gameStarted) {
+      if (e.target.style.background == colorName.style.color) {
+        points.innerHTML++;
+        startNewGame();
+      } else {
+        finishGame();
+      }
     }
   });
 });
@@ -87,11 +91,15 @@ colorBox.forEach((box) => {
 const finishGame = () => {
   modal.style.display = "flex";
   backBg.style.display = "block";
+  document.querySelector(".rounds-played").innerHTML = round.innerHTML + " rounds";
+  document.querySelector(".points-played").innerHTML = points.innerHTML + " pontos";
+
   points.innerHTML = 0;
   clearInterval(counter);
 };
 
 const startNewGame = () => {
+  gameStarted = true;
   formatText();
 
   switch (round.innerHTML) {
@@ -152,7 +160,6 @@ buttonSaveData.addEventListener("click", function () {
   };
 
   let rsp = [];
-
   let res = JSON.parse(localStorage.getItem("session"));
   if (res == null) {
     rsp.push(objectToSave);
@@ -181,6 +188,7 @@ function timer() {
     finishGame();
     return;
   }
+
   var current = Date.now();
 
   count = count - (current - initialMillis);
@@ -191,7 +199,12 @@ function timer() {
 function displayCount(count) {
   var res = count / 1000;
   let convert = res.toString().replace(".", ":");
-  document.getElementById("timer").innerHTML = convert + " segundos";
+  console.log(convert);
+  if (convert <= 3) {
+    document.getElementById("timer").innerHTML = convert + ":000 segundos";
+  } else {
+    document.getElementById("timer").innerHTML = convert + " segundos";
+  }
 }
 
 function startCounter() {
