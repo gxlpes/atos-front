@@ -92,7 +92,6 @@ const finishGame = () => {
   document.querySelector(".rounds-played").innerHTML = round.innerHTML + " rounds";
   document.querySelector(".points-played").innerHTML = points.innerHTML + " pontos";
 
-  points.innerHTML = 0;
   clearInterval(counter);
 };
 
